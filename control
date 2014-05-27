@@ -1,0 +1,15 @@
+Package: TestTask
+Version: 0.1
+Section: web
+Priority: optional
+Architecture: all
+Maintainer: Kiselev Mikhail <mkiselev91@gmail.com>
+Depends: openjdk-7-jre
+Homepage: http://google.com
+Description: Short description.
+ Longer description that may span multiple
+ lines. Indent with a space.
+ .
+ Even multiple paragraphs. Just remember that empty
+ lines should contain a period and nothing else
+ (except the space).

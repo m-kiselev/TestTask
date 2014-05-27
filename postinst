@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cp /bin/test-task.sh /etc/init.d
+/bin/test-task.sh start
+

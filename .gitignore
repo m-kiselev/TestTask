@@ -4,7 +4,8 @@
 target/
 target-eclipse/
 /*.war
-
+.idea
+*.iml
 
 #################
 ## Eclipse

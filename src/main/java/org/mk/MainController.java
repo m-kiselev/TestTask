@@ -14,28 +14,28 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @EnableAutoConfiguration
 public class MainController {
-	
-	private static final Logger	log	= LoggerFactory.getLogger(MainController.class);
-	
-	@RequestMapping("/")
-	public String welcome(Map<String, Object> model) {
-		return "welcome";
-	}
 
-	@RequestMapping("/ping")
-	@ResponseBody
-	public String getPong() {
-		log.info("pong");
-		return "pong";
-	}
+    private static final Logger log = LoggerFactory.getLogger(MainController.class);
 
-	@RequestMapping("/date")
-	@ResponseBody
-	public String getCurrentDate() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
-		String date = sdf.format(new Date()); 
-		
-		log.info("Current date: " + date);
-		return "Current date: " + date;
-	}
+    @RequestMapping("/")
+    public String welcome(Map<String, Object> model) {
+        return "welcome";
+    }
+
+    @RequestMapping("/ping")
+    @ResponseBody
+    public String getPong() {
+        log.info("pong");
+        return "pong";
+    }
+
+    @RequestMapping("/date")
+    @ResponseBody
+    public String getCurrentDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
+        String date = sdf.format(new Date()); 
+        
+        log.info("Current date: " + date);
+        return "Current date: " + date;
+    }
 }

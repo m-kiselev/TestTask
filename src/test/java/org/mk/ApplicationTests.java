@@ -24,25 +24,25 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @DirtiesContext
 public class ApplicationTests {
 
-	@Value("${local.server.port}")
-	private int port;
+    @Value("${local.server.port}")
+    private int port;
 
-	@Test
-	public void testPing() {
-		ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
-				"http://localhost:" + this.port + "/ping", String.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
-		assertTrue(entity.getBody().contains("pong"));
-	}
-	
-	@Test
-	public void testCurrentDate() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
-		String date = sdf.format(new Date()); 
-		
-		ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
-				"http://localhost:" + this.port+ "/date", String.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
-		assertTrue(entity.getBody().contains("Current date: " + date));
-	}
+    @Test
+    public void testPing() {
+        ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
+                "http://localhost:" + this.port + "/ping", String.class);
+        assertEquals(HttpStatus.OK, entity.getStatusCode());
+        assertTrue(entity.getBody().contains("pong"));
+    }
+    
+    @Test
+    public void testCurrentDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
+        String date = sdf.format(new Date()); 
+        
+        ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
+                "http://localhost:" + this.port+ "/date", String.class);
+        assertEquals(HttpStatus.OK, entity.getStatusCode());
+        assertTrue(entity.getBody().contains("Current date: " + date));
+    }
 }
